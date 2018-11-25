@@ -7,6 +7,8 @@ from Cython.Distutils import build_ext
 #from numpy.distutils.system_info import default_include_dirs, default_lib_dirs
 from distutils.sysconfig import get_config_vars
 
+default_lib_dirs = ['/usr/local/lib', '/usr/lib']
+
 (opt,) = get_config_vars('OPT')
 os.environ['OPT'] = " ".join(flag for flag in opt.split() if flag != '-Wstrict-prototypes')
 
@@ -18,9 +20,12 @@ if sys.platform == 'win32':
 else:
     #libraries = ["flint", "arb"]
     libraries = ["flint"]
-default_include_dirs += [
-    os.path.join(d, "flint") for d in default_include_dirs
-]
+
+default_include_dirs = ['/usr/local/include/flint', '/usr/include/flint']
+#default_include_dirs += [
+#    os.path.join(d, "flint") for d in default_include_dirs
+#]
+
 
 ext_modules = [
     Extension(
