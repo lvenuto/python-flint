@@ -6,10 +6,10 @@ cdef fmpz_series_coerce_operands(x, y):
             return fmpq_series(x), fmpq_series(y)
         #if isinstance(y, (nmod, nmod_poly, nmod_series)):
         #    return nmod_series(x), nmod_series(y)
-        if isinstance(y, (float, arb, arb_poly, arb_series)):
-            return arb_series(x), arb_series(y)
-        if isinstance(y, (complex, acb, acb_poly, acb_series)):
-            return acb_series(x), acb_series(y)
+        #if isinstance(y, (float, arb, arb_poly, arb_series)):
+        #    return arb_series(x), arb_series(y)
+        #if isinstance(y, (complex, acb, acb_poly, acb_series)):
+        #    return acb_series(x), acb_series(y)
     else:
         if isinstance(x, (int, long, fmpz, fmpz_poly)):
             return fmpz_series(x), y
@@ -17,10 +17,10 @@ cdef fmpz_series_coerce_operands(x, y):
             return fmpq_series(x), fmpq_series(y)
         #if isinstance(x, (nmod, nmod_poly, nmod_series)):
         #    return nmod_series(x), nmod_series(y)
-        if isinstance(x, (float, arb, arb_poly, arb_series)):
-            return arb_series(x), arb_series(y)
-        if isinstance(x, (complex, acb, acb_poly, acb_series)):
-            return acb_series(x), acb_series(y)
+        #if isinstance(x, (float, arb, arb_poly, arb_series)):
+        #    return arb_series(x), arb_series(y)
+        #if isinstance(x, (complex, acb, acb_poly, acb_series)):
+        #    return acb_series(x), acb_series(y)
     return NotImplemented, NotImplemented
 
 cdef class fmpz_series(flint_series):
