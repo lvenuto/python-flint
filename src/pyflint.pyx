@@ -319,5 +319,5 @@ include "nmod_series.pyx"
 
 include "functions.pyx"
 
-include "dirichlet.pyx"
+#include "dirichlet.pyx"
 
