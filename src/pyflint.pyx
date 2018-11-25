@@ -317,7 +317,7 @@ include "nmod_series.pyx"
 #include "acb_mat.pyx"
 #include "acb_series.pyx"
 
-include "functions.pyx"
+#include "functions.pyx"
 
 #include "dirichlet.pyx"
 
